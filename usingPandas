@@ -1,0 +1,31 @@
+import pandas as pd
+df = pd.DataFrame({'categorical':pd.Categorical(['d','e','f']),
+                   'numeric':[1,2,3],
+                   'object':['a','b','c']
+                   })
+df.describe()
+
+
+import statistics
+data = [{'name':'Cat','age':23, 'salary':1690},
+        {'name':'Alex','age':20, 'salary':1050},
+        {'name':'Bob','age':52, 'salary':1400}
+        ]
+
+df = pd.DataFrame(data, columns = ['name','age','salary'])
+
+agelist = df["age"]
+print(agelist)
+print(type(agelist))
+print(statistics.mean(agelist))
+print(statistics.median(agelist))
+
+
+import matplotlib.pyplot as plt
+data = {"sushi": 2, "Pizza":5 ,"Hamburger": 4, "Chicken":3}
+food = list(data.keys())
+count = list(data.values())
+plt.bar(food, count)
+plt.show()
+plt.pie(count, labels = food, autopct = '%.2f')
+plt.show()
